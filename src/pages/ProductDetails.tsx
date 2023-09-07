@@ -12,7 +12,11 @@ interface ProductDetailsProps {
 const ProductDetails: React.FC<ProductDetailsProps> = ({cart, add }) => {
 
   const { id } = useParams();
+
+  //to save from own db
   const [data, setData] = useState<any>(null)
+
+  //to set quantity when adding product
   const [quantity, setQuantity] = useState(1);
 
 
@@ -44,7 +48,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({cart, add }) => {
     return <div>Loading...</div>;
   }
 
-
+  
   const addProductToCart = () => {
     const productToAdd = { ...data, quantity}
     add(productToAdd)

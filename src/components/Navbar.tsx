@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { FaShoppingCart } from 'react-icons/fa';
-import { useSelector } from 'react-redux';
 import ShoppingCart from './ShoppingCart/ShoppingCart';
 
 interface NavbarProps {
@@ -26,15 +25,6 @@ const Navbar: React.FC<NavbarProps> = ({ cart, add, remove, onDelete, clearCart 
       setLocalCart(cart);
     }, [cart]);
 
-
-  //denna hämtar från store och uppdaterar korrekt, sparar dock ej i local storage.
-  // const { totalQuantity } = useSelector((state: RootState) => state.shoppingCart);
-
-  //hämtar data från local storage men fungerar ej vid första tilläggning
-  // const fromLocalStorage = JSON.parse(localStorage.getItem('shoppingCart')! || '[]')
-   // Check if fromLocalStorage is not empty and if it has a quantity property
-  //  const cartQuantity = fromLocalStorage.length > 0 ? fromLocalStorage[0].quantity : 0;
-
   return (
     <div className="Navbar">
       <div className="container">
@@ -54,7 +44,6 @@ const Navbar: React.FC<NavbarProps> = ({ cart, add, remove, onDelete, clearCart 
               onClick={() => setShowCart((showCart) => !showCart)}
             >
               <FaShoppingCart />
-              {/* <span className="cart-quantity">{ localCart.length }</span> */}
               <span className="cart-quantity">{ totalQuantity }</span>
             </span>
             <div className={`shoppingCart-dropdown ${showCart && 'show'}`}>
@@ -73,10 +62,3 @@ const Navbar: React.FC<NavbarProps> = ({ cart, add, remove, onDelete, clearCart 
 };
 
 export default Navbar;
-
-// Define RootState to provide type safety for useSelector
-type RootState = {
-  shoppingCart: {
-    totalQuantity: number;
-  };
-};

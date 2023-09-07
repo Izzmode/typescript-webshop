@@ -1,6 +1,4 @@
 import { FaTrash, FaPlus, FaMinus } from 'react-icons/fa'
-// import { useDispatch } from 'react-redux'
-// import { addToCart, removeAll, removeOne } from '../../store/features/shoppingCart/shoppingCartSlice'
 
 interface CartItemProps {
   cart: any; // Change 'any' to the actual type of your cart data
@@ -15,17 +13,14 @@ const CartItem: React.FC<CartItemProps> = ({cart, item, add, remove, onDelete, c
   
   const addF = () => {
     add(item)
-    // dispatch(addToCart(item.product))
   }
 
   const removeF = () => {
     remove(item)
-    // dispatch(removeOne(item.product._id))
   }
 
   const emptyRow = () => {
     onDelete(item)
-    // dispatch(removeAll(item.product._id))
   }
 
   return (

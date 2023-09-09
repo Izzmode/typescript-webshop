@@ -8,7 +8,6 @@ const Products = () => {
  useEffect(() => {
   
 
-
         fetch('http://localhost:3000/products/')
         .then ( res => {
             if(!res.ok){
@@ -28,8 +27,6 @@ const Products = () => {
 
 
     }, [])
-
-
 
 
   return (

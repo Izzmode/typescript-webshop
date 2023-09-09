@@ -1,40 +1,60 @@
 {
   "products": [
-    {"id": 1,
-    "title": "Book",
-    "description":"hej",
-    "price": 10.99,
-    "image": "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"},
-    {"id": 2,
-    "title": "Watch",
-    "description":"",
-    "price": 15.99,
-    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1999&q=80"},
-    {"id": 3,
-    "title": "Polariod",
-    "description":"",
-    "price": 17.99,
-    "image": "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"},
-    {"id": 4,
-    "title": "Ray-Bans",
-    "description":"",
-    "price": 14.99,
-    "image": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1780&q=80"},
-    {"id": 5,
-    "title": "Sneaker",
-    "description":"",
-    "price": 10.99,
-    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"},
-    {"id": 6,
-    "title": "House plant",
-    "description":"Green",
-    "price": 9.99,
-    "image": "https://images.unsplash.com/photo-1485955900006-10f4d324d411?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"},
-    {"id": 7,
-    "title": "Water bottle",
-    "description":"",
-    "price": 5.99,
-    "image": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"}
+    {
+      "id": 1,
+      "title": "Book",
+      "description": "Amazing book about amazing things. Escape your boring life now!",
+      "price": 10.99,
+      "image": "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+    },
+    {
+      "id": 2,
+      "title": "Watch",
+      "description": "Having trouble knowing what time of the day it is? Use watch!",
+      "price": 15.99,
+      "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1999&q=80"
+    },
+    {
+      "id": 3,
+      "title": "Polariod",
+      "description": "Take cute artsy picture with this old camera that is super expensive!",
+      "price": 17.99,
+      "image": "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+    },
+    {
+      "id": 4,
+      "title": "Ray-Bans",
+      "description": "Protect your eyes from the sun and look cool in these classic ray-bans!",
+      "price": 14.99,
+      "image": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1780&q=80"
+    },
+    {
+      "id": 5,
+      "title": "Sneaker",
+      "description": "Need to run fast? Or do you just have sore feet? Use these super comfortable sneakers!",
+      "price": 10.99,
+      "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+    },
+    {
+      "id": 6,
+      "title": "House plant",
+      "description": "Wonderful green plant that will make a lovely addition to your home.",
+      "price": 9.99,
+      "image": "https://images.unsplash.com/photo-1485955900006-10f4d324d411?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
+    },
+    {
+      "id": 7,
+      "title": "Water bottle",
+      "description": "Do you need to carry water with you to work? Use this green water bottle!",
+      "price": 5.99,
+      "image": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+    },
+    {
+      "title": "Lipstick",
+      "description": "A matte red lipstick",
+      "price": "9.99",
+      "image": "https://plus.unsplash.com/premium_photo-1677541205130-51e60e937318?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1856&q=80",
+      "id": 10
+    }
   ]
-
 }

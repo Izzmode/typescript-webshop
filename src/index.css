@@ -39,6 +39,11 @@
       background-color: #fff;
       padding-block: 1rem;
       font-size: .8em;
+      border-bottom: 1px solid #ececec;;
+  }
+
+  .Navbar h1{
+    color: black;
   }
   
   .Navbar .container {
@@ -94,17 +99,20 @@
   }
   
   .Navbar .shoppingCart-dropdown {
-    width: 600px;
+    width: 400px;
     /* dropdown menu */
     position: absolute;
     top: 4rem;
     right: 0;
+    margin-right: 2rem;
     z-index: 1000;
     display: none;
     padding: 1rem;
     font-size: 1rem;
     color: #000;
     background-color: #fff;
+    border: 1px solid #ececec;
+    border-radius: 5px;
     background-clip: padding-box;
   }
   
@@ -139,6 +147,7 @@
   
   .product-details .description {
       max-width: 30rem;
+      font-size: 1rem;
   }
   
   .product-details h4 {
@@ -194,20 +203,7 @@
     padding-bottom: 2rem;
   }
 
-  .Products button {
-    width: 300px;
-    padding: 1rem;
-    background-color: #e0183a;
-    color: white;
-    font-size: 1rem;
-    margin-block: 1.5rem;
-  }
 
-  .Products button:hover{
-    background-color: hsl(350, 81%, 53%);
-
-  }
-  
   /* PRODUCT CARD */
   
   .ProductCards-container{
@@ -233,7 +229,7 @@
   }
 
   .item-img{
-    width: 50px;
+    width: 100px;
   }
   
   .ProductCard, a:link {
@@ -291,7 +287,7 @@
     display: flex;
     align-items: center;
     cursor: pointer;
-    background-color: rgb(250, 49, 80);
+    background-color: rgba(0, 0, 0, 0.805);
     border: none;
     color: #FFFF;
 }
@@ -354,3 +350,84 @@
 margin-top: 30px;
 }
 
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-control,
+.form-label {
+    display: block;
+    width: 100%;
+}
+
+.form-control {
+    padding: 1em;
+    font-size: 1rem;
+    border: 1px solid #000;
+}
+.form-control:focus {
+    outline-color: #e0183a;
+}
+
+
+.createForm{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    box-shadow: 3px 3px 5px rgb(115, 114, 114);
+    padding: 1rem;
+    margin: 2rem auto;
+    border-radius: 1rem;
+}
+
+.createForm button{
+    width: 100%;
+    margin: 0 auto;
+    background-color: #000000db;
+    color: white;
+    padding: .5rem 0 .5rem 0;
+    cursor: pointer;
+
+}
+.createForm button:hover{
+    background-color: #303030;
+}
+
+.createForm .product-group{
+    width: 100%;
+    margin-bottom: 1rem;
+    
+}
+.createForm .product-control, .createForm button{
+    border-radius: 1rem;
+}
+
+.home-container {
+    display: flex;
+    width: 70%;
+    margin: 2rem auto;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.section-one, .section-two{
+    /* border: 1px solid black; */
+    height: 300px;
+    width: 250px;
+    text-align: center;
+    border-radius: 1rem;
+    box-shadow: 3px 3px 7px rgb(115, 114, 114);
+    padding: 1rem;
+
+}
+
+.homeh1{
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.home-container .nav-link{
+    font-size: 1.2rem;
+    color:#000;
+}

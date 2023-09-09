@@ -1,15 +1,14 @@
 import { FaTrash, FaPlus, FaMinus } from 'react-icons/fa'
 
 interface CartItemProps {
-  cart: any; // Change 'any' to the actual type of your cart data
   item: any;
   add: Function;
   remove: Function;
   onDelete: Function;
-  clearCart: any;
+  clearCart: Function;
 }
 
-const CartItem: React.FC<CartItemProps> = ({cart, item, add, remove, onDelete, clearCart }) => {
+const CartItem: React.FC<CartItemProps> = ({ item, add, remove, onDelete, clearCart }) => {
   
   const addF = () => {
     add(item)
@@ -38,6 +37,7 @@ const CartItem: React.FC<CartItemProps> = ({cart, item, add, remove, onDelete, c
             <button className="cart-btn clear" onClick={emptyRow}><FaTrash /></button>
             <button className="cart-btn" onClick={removeF}><FaMinus /></button>
             <button className="cart-btn" onClick={addF}><FaPlus /></button>
+            <hr />
           </div>
         </div>
       </div>

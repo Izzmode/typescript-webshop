@@ -1,13 +1,28 @@
 import { NavLink } from 'react-router-dom'
+import { FaShoppingCart } from 'react-icons/fa'
+import { MdAddCircle } from 'react-icons/md'
+
 
 const Home = () => {
 
+const style = { color: "rgba(0, 0, 0, 0.784)", fontSize: "4rem", marginTop: "3rem"}
+
 
   return (
-    <div> <h1>tbd</h1>
-    {<p><NavLink to='/products' className='nav-link'>Go to products</NavLink></p>}
+    <>
+    <h1 className='homeh1'>Welcome</h1>
+    <div className='home-container'>
+    {<div className='section-one'><NavLink to='/products' className='nav-link'>
+    <p>Shop products</p>
+    <FaShoppingCart style={style}/></NavLink>
+    </div>}
+    {<div className='section-two'><NavLink to='/products/add' className='nav-link'>
+    <p>Create new product</p>
+    <MdAddCircle style={style}/></NavLink>
+    </div>}
     
     </div>
+    </>
 
   )
 }

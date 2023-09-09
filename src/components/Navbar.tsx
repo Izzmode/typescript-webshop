@@ -39,6 +39,11 @@ const Navbar: React.FC<NavbarProps> = ({ cart, add, remove, onDelete, clearCart 
             </NavLink>
           </li>
           <li>
+            <NavLink to={`/products/add`} className="nav-link">
+              Create product
+            </NavLink>
+          </li>
+          <li>
             <span
               className="nav-link nav-link-grey"
               onClick={() => setShowCart((showCart) => !showCart)}

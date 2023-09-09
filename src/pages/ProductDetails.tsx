@@ -6,7 +6,7 @@ import { MdOutlineAddShoppingCart } from "react-icons/md"
 //props from app.tsx to add product to cart
 interface ProductDetailsProps {
   cart: any; 
-  add: any;
+  add: Function;
 }
 
 const ProductDetails: React.FC<ProductDetailsProps> = ({cart, add }) => {
@@ -65,20 +65,13 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({cart, add }) => {
         <img src={data.image} alt="" width={501} height={430} />
 
         <div className='product-description'>
-          <p><i>Product name:</i></p>
           <h4>{data.title}</h4>
           <hr></hr>
-          <p><i>Product description:</i></p>
           <h4 className='description'>{data.description}</h4>
           <hr></hr>
-          <p><i>Product price:</i></p>
           <h4 className='price'>{'$' + data.price}</h4>
           <hr></hr>
          
-
-        </div>
-
-      </div>
       <form className='quantity-form' onSubmit={e => e.preventDefault()}>
 
         <div>
@@ -88,6 +81,10 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({cart, add }) => {
         </div>
         <button type='submit' className='addTo-cart-btn' onClick={addProductToCart}>Add to Cart<MdOutlineAddShoppingCart className='shopping-cart-icon' /></button>
         </form>
+
+        </div>
+
+      </div>
       </div>
 
   )

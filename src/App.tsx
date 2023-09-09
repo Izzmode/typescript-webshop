@@ -3,39 +3,28 @@ import Products from "./pages/Products"
 import ProductDetails from "./pages/ProductDetails"
 import Navbar from './components/Navbar'
 import { useEffect, useState } from 'react'
+import CreateProduct from './pages/CreateProduct'
+import Home from './pages/Home'
 // import { useDispatch } from 'react-redux'
 
 const App = () => {
 
-  // const { cart, totalAmount } = useSelector((state: RootState) => state.shoppingCart);
-  
-  
-  // //hämtar data från localstorage, om det inte finns någon för det till en tom array.
-  // const cartFromLocalStorage = JSON.parse(localStorage.getItem('shoppingCart')! || '[]')
-  
-  // //detta loggas ut, ej vid add utan vid tryck på shoppingcart
-  // console.log(cartFromLocalStorage)
-
-  // //lägger in datan som finns i localstorage in i state
-  // const [cart, setCart] = useState(cartFromLocalStorage)
-
-  // //detta loggas inte ut alls
-  // console.log(cart)
-
-  // useEffect(() => {
-  //   localStorage.setItem('shoppingCart', JSON.stringify(cart));
-  // }, [cart] )
-
-  // const dispatch = useDispatch();
-
     // Retrieve existing cart data from local storage
-    const cartFromLocalStorage = JSON.parse(localStorage.getItem('shoppingCart') || '[]');
+
+    const initializeCart = () => {
+      const cartFromLocalStorage = JSON.parse(localStorage.getItem('shoppingCart') || '[]');
+      return cartFromLocalStorage;
+    };
     
-    const [cart, setCart] = useState(cartFromLocalStorage);
+    const [cart, setCart] = useState<CartItem[]>(initializeCart);
+    
 
     interface Product {
-      _id: any;
+      id: number;
+      title: string;
+      description: string;
       price: number;
+      image: string;
     }
 
     interface CartItem {
@@ -111,6 +100,8 @@ const App = () => {
       // localStorage.removeItem('shoppingCart'); // Remove the cart data from local storage
     }
 
+
+
    useEffect(() => {
       localStorage.setItem('shoppingCart', JSON.stringify(cart));
     }, [cart] )
@@ -124,9 +115,10 @@ const App = () => {
         onDelete={deleteProductFromCart}
         clearCart={clearCart}/>
         <Routes>
-            <Route path="/" element= { <Products />}/>
+            <Route path="/" element= { <Home />}/>
     
             <Route path="/products" element= { <Products />}/>
+            <Route path="/products/add" element= { <CreateProduct />}/>
 
             <Route path="/products/:id" element= {<ProductDetails cart={cart} add={addProductToCart}/>}/>
             

@@ -1,25 +1,26 @@
 import { FaTrash, FaPlus, FaMinus } from 'react-icons/fa'
 import { CartItemInterface } from '../../interfaces/interface'
+import { useShoppingCart } from '../../context/ShoppingCartContext';
 
 interface CartItemProps {
   item: CartItemInterface;
-  remove: Function;
-  onDelete: Function;
-  addInCart: Function;
+
 }
 
-const CartItem: React.FC<CartItemProps> = ({ item, remove, onDelete, addInCart }) => {
+const CartItem: React.FC<CartItemProps> = ({ item }) => {
+
+  const { removeProductFromCart, addProductInCart, deleteProductFromCart } = useShoppingCart()
   
   const addF = () => {
-    addInCart(item)
+    addProductInCart(item)
   }
 
   const removeF = () => {
-    remove(item)
+    removeProductFromCart(item)
   }
 
   const emptyRow = () => {
-    onDelete(item)
+    deleteProductFromCart(item)
   }
 
   return (

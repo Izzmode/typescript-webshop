@@ -2,15 +2,18 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'
 import { MdOutlineAddShoppingCart } from "react-icons/md"
 import { Product } from '../interfaces/interface';
+import { useShoppingCart } from '../context/ShoppingCartContext';
 
 
 //props from app.tsx to add product to cart
-interface ProductDetailsProps {
-  cart: []; 
-  add: Function;
-}
+// interface ProductDetailsProps {
+//   cart: []; 
+// }
 
-const ProductDetails: React.FC<ProductDetailsProps> = ({cart, add }) => {
+const ProductDetails: React.FC = () => {
+
+
+  const { addProductToCart } = useShoppingCart()
 
   const { id } = useParams();
 
@@ -56,9 +59,9 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({cart, add }) => {
   }
 
   
-  const addProductToCart = () => {
+  const addProductToCartF = () => {
     const productToAdd = { ...data, quantity}
-    add(productToAdd)
+    addProductToCart(productToAdd)
     setQuantity(1); 
   };
 
@@ -86,7 +89,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({cart, add }) => {
           <input type="number" className='qty-text' value={quantity}  onChange={(e) => setQuantity(parseInt(e.target.value))}/>
           <input type="button" value="+" className='plus'  onClick={() => setQuantity(quantity + 1)} />
         </div>
-        <button type='submit' className='addTo-cart-btn' onClick={addProductToCart}>Add to Cart<MdOutlineAddShoppingCart className='shopping-cart-icon' /></button>
+        <button type='submit' className='addTo-cart-btn' onClick={addProductToCartF}>Add to Cart<MdOutlineAddShoppingCart className='shopping-cart-icon' /></button>
         </form>
 
         </div>

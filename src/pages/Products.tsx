@@ -1,6 +1,6 @@
 import ProductCard from '../components/ProductCard'
 import { useEffect, useState } from 'react'
-import { Product, CartItemInterface } from '../interfaces/interface'
+import { Product } from '../interfaces/interface'
 
 const Products = () => {
 

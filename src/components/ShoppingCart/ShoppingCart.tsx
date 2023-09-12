@@ -1,15 +1,17 @@
+import { useShoppingCart } from '../../context/ShoppingCartContext';
 import { CartItemInterface } from '../../interfaces/interface';
 import CartItem from './CartItem';
 
 
-interface ShoppingCartProps {
-  cart: [];
-  remove: Function;
-  onDelete: Function;
-  addInCart: Function;
-}
+// interface ShoppingCartProps {
+//   cart: [];
+// }
 
-const ShoppingCart: React.FC<ShoppingCartProps> = ( { cart, remove, onDelete, addInCart } ) => {
+const ShoppingCart: React.FC = ( ) => {
+
+  const { cart } = useShoppingCart()
+
+
 
   return (
     <div className='ShoppingCart'>
@@ -18,9 +20,6 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ( { cart, remove, onDelete, ad
         <CartItem 
         key= {item.id} 
         item={item} 
-        remove={remove} 
-        onDelete={onDelete}
-        addInCart={addInCart}
         />
       ))}     
 

@@ -55,20 +55,6 @@
       "price": "9.99",
       "image": "https://plus.unsplash.com/premium_photo-1677541205130-51e60e937318?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1856&q=80",
       "id": 10
-    },
-    {
-      "title": "test namn",
-      "description": "test beskrivning",
-      "price": 123,
-      "image": "https://images.unsplash.com/photo-1693802742032-0c0fed0c6626?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1948&q=80",
-      "id": 11
-    },
-    {
-      "title": "test efter ts",
-      "description": "beskricning ts",
-      "price": 555,
-      "image": "https://images.unsplash.com/photo-1669745355012-54137cc7b011?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      "id": 12
     }
   ]
 }

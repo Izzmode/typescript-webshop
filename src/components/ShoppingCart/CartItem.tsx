@@ -1,14 +1,14 @@
 import { FaTrash, FaPlus, FaMinus } from 'react-icons/fa'
+import { CartItemInterface } from '../../interfaces/interface'
 
 interface CartItemProps {
-  item: any;
+  item: CartItemInterface;
   add: Function;
   remove: Function;
   onDelete: Function;
-  clearCart: Function;
 }
 
-const CartItem: React.FC<CartItemProps> = ({ item, add, remove, onDelete, clearCart }) => {
+const CartItem: React.FC<CartItemProps> = ({ item, add, remove, onDelete }) => {
   
   const addF = () => {
     add(item)

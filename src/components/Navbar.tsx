@@ -2,20 +2,21 @@ import React, { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { FaShoppingCart } from 'react-icons/fa';
 import ShoppingCart from './ShoppingCart/ShoppingCart';
+import { Product, CartItemInterface } from '../interfaces/interface';
+
 
 interface NavbarProps {
-  cart: any; // Change 'any' to the actual type of your cart data
-  add: any;
-  remove: any;
-  onDelete: any;
-  clearCart: any;
+  cart: []; 
+  add: Function;
+  remove: Function;
+  onDelete: Function;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ cart, add, remove, onDelete, clearCart }) => {
+const Navbar: React.FC<NavbarProps> = ({ cart, add, remove, onDelete }) => {
   // Showing and hiding shopping cart
   const [showCart, setShowCart] = useState(false);
   
-  const totalQuantity = cart.reduce((total: any, product: any) => total + product.quantity, 0);
+  const totalQuantity = cart.reduce((total: any, product: CartItemInterface) => total + product.quantity, 0);
 
     // Local state to hold cart data
     const [localCart, setLocalCart] = useState(cart);
@@ -57,7 +58,7 @@ const Navbar: React.FC<NavbarProps> = ({ cart, add, remove, onDelete, clearCart 
               add={add} 
               remove={remove} 
               onDelete={onDelete}
-              clearCart={clearCart}/>
+              />
             </div>
           </li>
         </ul>

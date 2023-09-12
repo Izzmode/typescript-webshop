@@ -1,11 +1,15 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'
 import { MdOutlineAddShoppingCart } from "react-icons/md"
+import { Product } from '../interfaces/interface';
 
+//tbd
+//se till att det bara finns en av alla interfaces
+//ta bort any
 
 //props from app.tsx to add product to cart
 interface ProductDetailsProps {
-  cart: any; 
+  cart: []; 
   add: Function;
 }
 
@@ -14,7 +18,13 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({cart, add }) => {
   const { id } = useParams();
 
   //to save from own db
-  const [data, setData] = useState<any>(null)
+  const [data, setData] = useState<Product>({
+    id: 0,
+    title: '',
+    description: '',
+    price: 0,
+    image: '',
+  })
 
   //to set quantity when adding product
   const [quantity, setQuantity] = useState(1);

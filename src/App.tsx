@@ -5,7 +5,7 @@ import Navbar from './components/Navbar'
 import { useEffect, useState } from 'react'
 import CreateProduct from './pages/CreateProduct'
 import Home from './pages/Home'
-// import { useDispatch } from 'react-redux'
+import { CartItemInterface, Product } from './interfaces/interface'
 
 const App = () => {
 
@@ -16,27 +16,11 @@ const App = () => {
       return cartFromLocalStorage;
     };
     
-    const [cart, setCart] = useState<CartItem[]>(initializeCart);
+    //ci
+    const [cart, setCart] = useState(initializeCart);
     
 
-    interface Product {
-      id: number;
-      title: string;
-      description: string;
-      price: number;
-      image: string;
-    }
-
-    interface CartItem {
-      product: Product;
-      quantity: number;
-    }
-
-    const getTotalQuantity = (cart: CartItem[]) => {
-      // return cart.reduce((total, item) => total + item.quantity, 0);
-    };
-
-    const removeProductFromCart = (product: any) => {
+    const removeProductFromCart = (product: Product) => {
       const updatedCart = [...cart];
       const index = updatedCart.findIndex((item: any) => item.id === product.id);
 
@@ -58,7 +42,7 @@ const App = () => {
     }
   
   
-    const addProductToCart = (product: any) => {
+    const addProductToCart = (product: CartItemInterface) => {
       // Clone the existing cart array to avoid mutating it directly
       const updatedCart = [...cart];
 
@@ -66,11 +50,7 @@ const App = () => {
       
       if (existingProduct) {
 
-        existingProduct.quantity += 1;
-
-        // localStorage.setItem('shoppingCart', JSON.stringify(test)); // Replace with your storage key
-
-        //kolla mer på detta
+        existingProduct.quantity += product.quantity;
  
       } else {
         
@@ -86,7 +66,7 @@ const App = () => {
     };
 
     //Tar bort en product helt från korgen
-    const deleteProductFromCart = (product: any) => {
+    const deleteProductFromCart = (product: CartItemInterface) => {
 
 
       const updatedCartDelete = cart.filter((item:any) => item.id !== product.id)
@@ -96,11 +76,7 @@ const App = () => {
       
     }
     
-    const clearCart = () => {
-      // localStorage.removeItem('shoppingCart'); // Remove the cart data from local storage
-    }
-
-
+   
 
    useEffect(() => {
       localStorage.setItem('shoppingCart', JSON.stringify(cart));
@@ -113,7 +89,7 @@ const App = () => {
         add={addProductToCart} 
         remove={removeProductFromCart} 
         onDelete={deleteProductFromCart}
-        clearCart={clearCart}/>
+        />
         <Routes>
             <Route path="/" element= { <Home />}/>
     

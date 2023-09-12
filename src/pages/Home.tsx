@@ -3,7 +3,7 @@ import { FaShoppingCart } from 'react-icons/fa'
 import { MdAddCircle } from 'react-icons/md'
 
 
-const Home = () => {
+const Home: React.FC = () => {
 
 const style = { color: "rgba(0, 0, 0, 0.784)", fontSize: "4rem", marginTop: "3rem"}
 

@@ -1,5 +1,11 @@
 import { NavLink } from 'react-router-dom'
-const ProductCard = ({ product }: {product: any}) => {
+import { Product } from '../interfaces/interface'
+
+interface ProductCardProps {
+  product: Product;
+}
+
+const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
   return (
 

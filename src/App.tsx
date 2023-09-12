@@ -19,10 +19,10 @@ const App = () => {
     //ci
     const [cart, setCart] = useState(initializeCart);
     
-
-    const removeProductFromCart = (product: Product) => {
+    //remove, minus one item from caert
+    const removeProductFromCart = (product: CartItemInterface) => {
       const updatedCart = [...cart];
-      const index = updatedCart.findIndex((item: any) => item.id === product.id);
+      const index = updatedCart.findIndex((item: CartItemInterface) => item.id === product.id);
 
       if (index !== -1) {
         if(updatedCart[index].quantity<=1) {
@@ -41,12 +41,12 @@ const App = () => {
       }
     }
   
-  
+    //adds items to cart
     const addProductToCart = (product: CartItemInterface) => {
       // Clone the existing cart array to avoid mutating it directly
       const updatedCart = [...cart];
 
-      const existingProduct = updatedCart.find((item:any) => item.id === product.id)
+      const existingProduct = updatedCart.find((item: CartItemInterface) => item.id === product.id)
       
       if (existingProduct) {
 
@@ -65,19 +65,35 @@ const App = () => {
       localStorage.setItem('shoppingCart', JSON.stringify(updatedCart));
     };
 
-    //Tar bort en product helt från korgen
+    //add one product at a time in cart
+    const addProductInCart = (product: CartItemInterface) => {
+      // Clone the existing cart array to avoid mutating it directly
+      const updatedCart = [...cart];
+
+      const existingProduct = updatedCart.find((item: CartItemInterface) => item.id === product.id)
+      
+
+        existingProduct.quantity += 1;
+      
+      // Update the component's cart state
+      setCart(updatedCart);
+      
+      // Save the updated cart to local storage
+      localStorage.setItem('shoppingCart', JSON.stringify(updatedCart));
+    };
+
+    //Remove entire product from cart
     const deleteProductFromCart = (product: CartItemInterface) => {
 
 
-      const updatedCartDelete = cart.filter((item:any) => item.id !== product.id)
+      const updatedCartDelete = cart.filter((item:CartItemInterface) => item.id !== product.id)
 
         setCart(updatedCartDelete)
         localStorage.setItem('shoppingCart', JSON.stringify(updatedCartDelete)); // Replace with your storage key
       
     }
     
-   
-
+  //updates localstorage everytime cart
    useEffect(() => {
       localStorage.setItem('shoppingCart', JSON.stringify(cart));
     }, [cart] )
@@ -86,9 +102,9 @@ const App = () => {
     <div>
         <Navbar 
         cart={cart} 
-        add={addProductToCart} 
         remove={removeProductFromCart} 
         onDelete={deleteProductFromCart}
+        addInCart = {addProductInCart}
         />
         <Routes>
             <Route path="/" element= { <Home />}/>

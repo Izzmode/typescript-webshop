@@ -3,9 +3,6 @@ import { useParams } from 'react-router-dom'
 import { MdOutlineAddShoppingCart } from "react-icons/md"
 import { Product } from '../interfaces/interface';
 
-//tbd
-//se till att det bara finns en av alla interfaces
-//ta bort any
 
 //props from app.tsx to add product to cart
 interface ProductDetailsProps {

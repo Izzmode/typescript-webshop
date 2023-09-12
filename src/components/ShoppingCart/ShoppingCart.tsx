@@ -4,12 +4,12 @@ import CartItem from './CartItem';
 
 interface ShoppingCartProps {
   cart: [];
-  add: Function;
   remove: Function;
   onDelete: Function;
+  addInCart: Function;
 }
 
-const ShoppingCart: React.FC<ShoppingCartProps> = ( { cart, add, remove, onDelete } ) => {
+const ShoppingCart: React.FC<ShoppingCartProps> = ( { cart, remove, onDelete, addInCart } ) => {
 
   return (
     <div className='ShoppingCart'>
@@ -18,9 +18,9 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ( { cart, add, remove, onDelet
         <CartItem 
         key= {item.id} 
         item={item} 
-        add={add} 
         remove={remove} 
         onDelete={onDelete}
+        addInCart={addInCart}
         />
       ))}     
 

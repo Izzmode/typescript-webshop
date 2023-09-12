@@ -12,6 +12,13 @@ interface Product {
     quantity: number;
   }
 
+  interface FormData {
+    title: string;
+    description: string;
+    price: string;
+    image: string;
+  }
 
 
-export type { Product, CartItemInterface }
+
+export type { Product, CartItemInterface, FormData }

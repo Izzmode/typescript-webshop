@@ -7,16 +7,16 @@ import { Product, CartItemInterface } from '../interfaces/interface';
 
 interface NavbarProps {
   cart: []; 
-  add: Function;
   remove: Function;
   onDelete: Function;
+  addInCart: Function;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ cart, add, remove, onDelete }) => {
+const Navbar: React.FC<NavbarProps> = ({ cart, remove, onDelete, addInCart }) => {
   // Showing and hiding shopping cart
   const [showCart, setShowCart] = useState(false);
   
-  const totalQuantity = cart.reduce((total: any, product: CartItemInterface) => total + product.quantity, 0);
+  const totalQuantity = cart.reduce((total: number, product: CartItemInterface) => total + product.quantity, 0);
 
     // Local state to hold cart data
     const [localCart, setLocalCart] = useState(cart);
@@ -33,7 +33,7 @@ const Navbar: React.FC<NavbarProps> = ({ cart, add, remove, onDelete }) => {
           <h1>WebShop</h1>
         </Link>
         <ul className="nav-links">
-          {/* <li><NavLink to='/' className='nav-link'>Home</NavLink></li> */}
+          <li><NavLink to='/' className='nav-link'>Home</NavLink></li>
           <li>
             <NavLink to={`/products`} className="nav-link">
               Products
@@ -55,9 +55,9 @@ const Navbar: React.FC<NavbarProps> = ({ cart, add, remove, onDelete }) => {
             <div className={`shoppingCart-dropdown ${showCart && 'show'}`}>
               <ShoppingCart 
               cart={cart} 
-              add={add} 
               remove={remove} 
               onDelete={onDelete}
+              addInCart={addInCart}
               />
             </div>
           </li>

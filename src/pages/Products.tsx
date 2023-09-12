@@ -1,9 +1,10 @@
 import ProductCard from '../components/ProductCard'
 import { useEffect, useState } from 'react'
+import { Product, CartItemInterface } from '../interfaces/interface'
 
 const Products = () => {
 
-  const [data, setData] = useState<any>(null)
+  const [data, setData] = useState<Product[]>([])
 
  useEffect(() => {
   
@@ -37,7 +38,7 @@ const Products = () => {
       <ul className='ProductCards-container'>
    
       
-      { data && data.map((product: any) => (
+      { data && data.map((product: Product) => (
             <ProductCard key={product.id} product={product} />
           )) }
 

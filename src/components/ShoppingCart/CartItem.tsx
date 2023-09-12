@@ -3,15 +3,15 @@ import { CartItemInterface } from '../../interfaces/interface'
 
 interface CartItemProps {
   item: CartItemInterface;
-  add: Function;
   remove: Function;
   onDelete: Function;
+  addInCart: Function;
 }
 
-const CartItem: React.FC<CartItemProps> = ({ item, add, remove, onDelete }) => {
+const CartItem: React.FC<CartItemProps> = ({ item, remove, onDelete, addInCart }) => {
   
   const addF = () => {
-    add(item)
+    addInCart(item)
   }
 
   const removeF = () => {

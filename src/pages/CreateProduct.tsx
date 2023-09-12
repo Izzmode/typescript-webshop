@@ -1,17 +1,12 @@
 import { useState } from 'react'
 import FormInput from '../components/FormInput'
 import { useNavigate } from 'react-router-dom'
+import { FormData } from '../interfaces/interface'
 
-const CreateProduct = () => {
+const CreateProduct: React.FC = () => {
 
   const navigate = useNavigate()
 
-  interface FormData {
-    title: string;
-    description: string;
-    price: string;
-    image: string;
-  }
 
   const [formData, setFormData] = useState<FormData>({
     title: '',
@@ -22,7 +17,7 @@ const CreateProduct = () => {
 
 
    //register new product to db
-   const registerProduct = async (formData: any) => {
+   const registerProduct = async (formData: FormData) => {
 
     const product = {
       title: formData.title,

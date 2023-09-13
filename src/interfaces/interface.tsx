@@ -8,10 +8,11 @@ interface Product {
   }
 
   interface CartItemInterface extends Product {
-    // product: Product;
     quantity: number;
   }
 
+
+  //when creating a product
   interface FormData {
     title: string;
     description: string;

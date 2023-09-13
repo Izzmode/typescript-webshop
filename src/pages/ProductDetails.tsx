@@ -4,12 +4,6 @@ import { MdOutlineAddShoppingCart } from "react-icons/md"
 import { Product } from '../interfaces/interface';
 import { useShoppingCart } from '../context/ShoppingCartContext';
 
-
-//props from app.tsx to add product to cart
-// interface ProductDetailsProps {
-//   cart: []; 
-// }
-
 const ProductDetails: React.FC = () => {
 
 

@@ -3,15 +3,10 @@ import { CartItemInterface } from '../../interfaces/interface';
 import CartItem from './CartItem';
 
 
-// interface ShoppingCartProps {
-//   cart: [];
-// }
+const ShoppingCart: React.FC = () => {
 
-const ShoppingCart: React.FC = ( ) => {
-
+  //cart from my context
   const { cart } = useShoppingCart()
-
-
 
   return (
     <div className='ShoppingCart'>

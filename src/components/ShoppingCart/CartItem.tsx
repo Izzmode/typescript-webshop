@@ -4,11 +4,11 @@ import { useShoppingCart } from '../../context/ShoppingCartContext';
 
 interface CartItemProps {
   item: CartItemInterface;
-
 }
 
 const CartItem: React.FC<CartItemProps> = ({ item }) => {
 
+  //functions from my context
   const { removeProductFromCart, addProductInCart, deleteProductFromCart } = useShoppingCart()
   
   const addF = () => {
@@ -25,9 +25,7 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
 
   return (
     <div className='CartItem'>
-      
-      {/* Row */}
-      <div className='row'>
+            <div className='row'>
         <div className='row-left'>
           <img src={item.image} alt={item.title} className='item-img' />
           <p className='item-name'>{item.title}</p>
